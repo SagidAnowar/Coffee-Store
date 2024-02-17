@@ -1,0 +1,384 @@
+.HomePage-NavBar{
+    width: -webkit-fill-available;
+    position: fixed;
+    padding: 15px 50px;
+    top: 0;
+    height: 80px;
+    z-index: 3;
+    background-color: transparent;
+    transition: all .5s ease .25s;
+    width: -moz-available;
+
+    @media (max-width:870px){
+      background-color: #282828!important;
+      }
+      @media (max-width:470px){
+        padding: 10px 20px!important;      
+        }
+        @media (max-width:400px){
+          padding: 5px 10px!important;      
+          }
+
+    .hamburger-section{
+        width: 100%;
+        background-color: #282828;
+        left: 0;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        position: absolute;
+        z-index: 0; 
+        height: 295px;
+        transition: top .5s ease-out;
+        display: flex;
+        align-items: self-end;
+        align-items: flex-end;
+        
+        @media (min-width:870px){
+            display: none;
+        }
+            @media (max-width:470px){
+                height: 270px;     
+            }
+
+        .hamburger-container{
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            z-index: 3;
+        
+            a{  
+                text-decoration: none;
+                color:white;
+                width: 100%;
+                font-size: 17px;
+                display: block;
+                border-top: 1px solid #fff;
+                border-color: rgba(255,255,255,.2);
+                display: block;
+                padding: 12px 15px;
+                font-size: .9375em;
+                font-family: Montserrat,sans-serif;
+                font-weight: 700;
+                font-style: normal;
+                transition: background-position 275ms ease;
+            
+                @media (min-width:871px){
+                    display: none;
+                }
+    
+                    @media (max-width:870px){
+                        align-self: center;
+                        margin: 0 auto;
+                    }
+    
+                transition: color .3s ease ;
+                &:hover {
+                color: #777;
+                transition: color .3s ease ;
+                }
+            }
+        }
+    }
+
+
+    .NavBar-Container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+        z-index: 3;
+
+        .Navbar-Title{
+            font-size: 30px;
+            color:white;
+            text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 900;
+            z-index: 3;
+
+            svg{
+            
+                @media (max-width:600px){
+                    width: 120px!important;
+                }
+
+                @media (max-width:470px){
+                    width: 100px!important;
+                }
+            }
+        }
+
+        .Cart-Logo{
+            height: 35px;
+            width: 35px;
+            fill: white;
+            margin-left: 30px;
+            bottom: 0.4rem;
+            position: relative;
+
+            @media (max-width:470px){
+                margin-left: 1rem;      
+            }
+        }
+        
+        span{
+            font-size: 1.2rem;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            min-width: 25px;
+            height: 25px;
+            border-radius: 15px;
+        }
+
+        .Navbar-Links{
+            text-decoration: none;
+            color: #777;
+            list-style-type: none;
+            margin-left: 25px;
+            margin-right: 25px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 900;
+            font-size: 15px;
+            letter-spacing: 2.5px;
+            transition: all .5s ease ;
+
+            @media (max-width:1030px){
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+                @media (max-width:930px){
+                    margin-left: 9px;
+                    margin-right: 9px;
+                }
+
+                    @media (max-width:870px){
+                        display: none;
+                    }
+
+            &:hover{
+                color:white;
+                transition: all .5s ease ;
+            }
+        }
+
+        .Navbar-Links-Scroll{
+            text-decoration: none;
+            color: white;
+            list-style-type: none;
+            margin-left: 25px;
+            margin-right: 25px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 900;
+            font-size: 15px;
+            letter-spacing: 2.5px;
+            transition: all .5s ease ;
+
+            @media (max-width:1030px){
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+                @media (max-width:930px){ 
+                    margin-left: 9px;
+                    margin-right: 9px;
+                }
+                    @media (max-width:870px){
+                        display: none;
+                    }
+
+            &:hover{
+                color:#777;
+                transition: all .5s ease ;
+            }
+        }
+    
+        ul{
+            display: flex;
+            align-items: center;
+        }
+    
+        li{
+            list-style-type: none;
+
+            .hamburger-react{
+                color: white;
+                margin-right: 1rem;
+                z-index: 3;
+                transform: none;
+                
+                @media (min-width:870px){
+                    display: none;
+                }
+                    @media (max-width:870px){
+                        display: inline-block;
+                    }    
+                        @media (max-width:600px){
+                            width: 40px!important;
+                            height: 40px!important;
+                            top: -4px;
+                            margin-right: 1.5rem;
+                        }
+                            @media (max-width:470px){
+                                margin-right: 1rem;      
+                            }
+
+            }
+        
+        } 
+    }
+}
+
+.react-toggle {
+    touch-action: pan-x;
+  
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+  
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .react-toggle-screenreader-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .react-toggle--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+  }
+  
+  .react-toggle-track {
+    width: 50px;
+    height: 24px;
+    padding: 0;
+    border-radius: 30px;
+    background-color: #4D4D4D;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+        @media (max-width:600px){
+        width: 45px!important;
+        height: 20px!important;
+        }
+  }
+  
+  .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: #000000;
+  }
+  
+  .react-toggle--checked .react-toggle-track {
+    background-color: #19AB27;
+  }
+  
+  .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: #128D15;
+  }
+  
+  .react-toggle-track-check {
+    position: absolute;
+    width: 14px;
+    height: 10px;
+    top: 0px;
+    bottom: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 0;
+    left: 8px;
+    opacity: 0;
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+  }
+  
+  .react-toggle--checked .react-toggle-track-check {
+    opacity: 1;
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+  }
+  
+  .react-toggle-track-x {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0px;
+    bottom: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 0;
+    right: 10px;
+    opacity: 1;
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+  }
+  
+  .react-toggle--checked .react-toggle-track-x {
+    opacity: 0;
+  }
+  
+  .react-toggle-thumb {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #4D4D4D;
+    border-radius: 50%;
+    background-color: #FAFAFA;
+    background-image: url("../../Assets/music.svg");
+    background-position: center;
+  
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+
+    @media (max-width:600px){
+      width: 19px!important;
+      height: 19px!important;
+    }
+  }
+  
+  .react-toggle--checked .react-toggle-thumb {
+    left: 27px;
+    border-color: #19AB27;
+  }
+  
+  .react-toggle--focus .react-toggle-thumb {
+    -webkit-box-shadow: 0px 0px 3px 2px #0099E0;
+    -moz-box-shadow: 0px 0px 3px 2px #0099E0;
+    box-shadow: 0px 0px 2px 3px #0099E0;
+  }
+  
+  .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+    -webkit-box-shadow: 0px 0px 5px 5px #0099E0;
+    -moz-box-shadow: 0px 0px 5px 5px #0099E0;
+    box-shadow: 0px 0px 5px 5px #0099E0;
+  }

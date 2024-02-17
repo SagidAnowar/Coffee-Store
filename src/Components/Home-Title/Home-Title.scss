@@ -1,0 +1,65 @@
+.Title-Section{
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: default;
+ 
+    svg{
+        width: 600px;
+        height: fit-content;
+
+        @media (max-width:850px){
+            width: 400px;
+        }
+            @media (max-width:660px){
+                width: 300px;
+            }
+                @media (max-width:540px){
+                    width: 250px;
+                }
+    
+        g{
+            fill: white;
+        }
+    }
+ 
+    .Title-Slogan{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        color: white;
+        letter-spacing: 8px;
+        font-size: 35px;
+        margin-top: 25rem;
+        
+        @media (max-width:1050px){
+            font-size: 30px;
+        }
+            @media (max-width:940px){
+                font-size: 24px;
+                text-align: center;
+            }
+                @media (max-width:660px){
+                    letter-spacing: 4px;
+                }              
+    
+    }
+ 
+    .text-divider-div{
+        width: fit-content;
+        margin: 0 auto; 
+    }
+ 
+    .title-p-div {
+        width: fit-content;
+        margin: 0 auto;
+        color: white;
+        font-weight: 800;
+        letter-spacing:4px;
+        font-size: 20px;
+
+        @media (max-width:850px){
+            font-size: 16px;
+            text-align: center;
+            }
+    }
+}

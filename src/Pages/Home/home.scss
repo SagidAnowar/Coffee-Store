@@ -1,0 +1,195 @@
+.HomePage-container{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .HomePage-Information-Section{
+        width: 100%;
+        height: 800px;
+        background-color: white;
+        position: relative;
+        top: 27rem;
+        margin-bottom: 24.9rem;
+
+        .HomePage-extra-Image{
+            background-size: contain;
+            height: 500px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            cursor: default;
+        
+            img{
+                width: 100%;
+                height: 766px;
+                object-fit: cover;
+                outline: 10px solid white;
+                outline-offset: -10px;
+                object-position: left;
+                filter: brightness(60%);
+            }
+        }
+    
+        .HomePage-Information-text{
+            position: relative;
+            width: 100%;
+            bottom: 16rem;
+            text-align: center;
+            cursor: default;
+        
+            h1{
+                font-family: 'Montserrat', sans-serif;
+                font-size: 45px;
+                text-transform: uppercase;
+                letter-spacing: 20px;
+                font-weight: 700;
+                color:white;
+                margin: 0 auto;
+                margin-left: 1rem;
+                
+                @media (max-width:980px){
+                    font-size: 35px;
+                }
+                    @media (max-width:425px){
+                        font-size: 33px;
+                        letter-spacing: 15px;
+                    }
+            }
+
+            svg{
+
+                g{
+                fill: white;
+                }
+
+                @media (max-width:980px){
+                    width: 300px!important;
+                    height: 50px!important;
+                }
+                    @media (max-width:575px){
+                        display: none!important;
+                    }
+       
+            }
+      
+            p{
+                font-size: 18px;
+                width: 80%;
+                margin: 0 auto;
+                font-family: 'Open Sans';
+                color: white;
+                bottom: 1rem;
+                position: relative;
+                font-weight: 600;
+                line-height: 1.8;
+        
+                @media (max-width:575px){
+                    width: 80%;
+                    margin: 0 auto;
+                    margin-top: 2rem;
+                    font-size: 17px;
+                    line-height: 1.6;
+                    font-family: Montserrat, sans-serif;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    
+    .Why-choose-us-section{
+      position: relative;
+      text-align: center;
+      margin-top: 24rem;
+      background-color: white;
+      height: 300px;
+    
+        .Aroma-span{
+            display: flex;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            margin-top: 6rem;
+            z-index: 0;
+            
+            span{
+                font-family: "Montserrat", sans-serif;
+                color:#ECECEC;
+                font-size: 180px;
+                font-weight: 700;
+                margin-right: 3rem;
+                margin-left: 3rem;
+            }
+        }
+    
+        .Why-choose-us-title{
+            font-family: "Montserrat", sans-serif;
+            font-size: 50px;
+            text-transform: uppercase;
+            letter-spacing: 20px;
+            font-weight: 700;
+            color: #333333;
+            position: relative;
+        }
+    
+        h5{
+            font-size: 15px;
+            color: #333333;
+            font-family: "Montserrat", sans-serif;
+            position: relative;
+        }
+    }
+
+    .Chose-us-cards-section{
+      background-color: white;
+      position: relative;
+      height: 600px;
+
+        .background-logo{
+            width: 60%;
+            position: absolute;
+            z-index: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 14rem;
+            
+            path{
+                fill: #ECECEC;
+            }
+        }
+
+        .Choose-us-cards{
+            display: grid;
+            width: 90%;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin: 0 auto;
+            position: relative;
+
+            svg{
+                path{
+                    fill: #333333 !important;
+                }
+            }
+
+            .Choose-us-cards-div{
+                padding: 0 2rem;
+                text-align: center;
+
+                h4{
+                    color: #333333;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 25px;
+                    margin: 1.5rem;
+                }
+            
+                p{
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: #4c4c4c;
+                }
+            }
+        }
+    }
+}
+    
