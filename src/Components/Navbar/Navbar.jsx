@@ -1,11 +1,11 @@
 import "./Navbar.scss";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from "../../Assets/Morning Aroma.svg";
 import Toggle from 'react-toggle'
 import { Sling as Hamburger } from 'hamburger-react'
 import MusicContext from "../../Context/musicContext";
-import { useContext } from 'react';
+
 
 
 const Navbar = () => {
@@ -54,7 +54,6 @@ const Navbar = () => {
                                 <Link className="hamburger" to='/shop'> SHOP </Link>
                                 <Link className="hamburger" to='/about'> ABOUT </Link>
                                 <Link className="hamburger" to='/login'> SIGN IN </Link>
-                                
                             </div>
                         </div>   
                         
