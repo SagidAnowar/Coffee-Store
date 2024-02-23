@@ -23,7 +23,7 @@ const NavbarSite = () => {
                 <div>
                     <ul>
                         <li>
-                            <Link className="Navbar-Link-Site" to="/">HOME</Link>
+                            <Link className="Navbar-Links-Site" to="/">HOME</Link>
                         </li>
                         <li>
                             <Link className="Navbar-Links-Site" to="/shop">SHOP</Link>
@@ -54,11 +54,12 @@ const NavbarSite = () => {
                             <Toggle 
                             defaultChecked={checked}
                             checked={checked===true ? true : false}
-                            onChange={checked=== true ? ()=>{setChecked(!checked); stop()} : () => {setChecked(!checked); play() }}
+                            onChange={checked=== true 
+                                ? () => {setChecked(!checked); stop()} 
+                                : () => {setChecked(!checked); play() }}
                             >
                             </Toggle>
                         </li>
-
                     </ul>
                 </div>
             </div>

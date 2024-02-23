@@ -19,13 +19,15 @@ const Home = () => {
     return (
         <div className='HomePage-container'>
             <ImageSlider/>
+
             <Navbar/>
+            
             <HomeTitle/>
 
             <section  className="HomePage-Information-Section">
                 <div>
                     <div  className="HomePage-extra-Image">
-                        <img alt="coffe" src={coffeeImage}></img>
+                        <img alt="coffee" src={coffeeImage}></img>
                     </div>
 
                     <div className="HomePage-Information-text" >

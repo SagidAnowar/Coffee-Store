@@ -15,10 +15,10 @@ const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
     
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            setScroll(window.scrollY > 60)
-        })
-    }, []);
+        window.addEventListener("scroll", () => {
+          setScroll(window.scrollY > 60);
+        });
+      }, []);
 
     return (
         <nav className="HomePage-NavBar" style={ scroll ? {backgroundColor:"#282828", padding: "7px 30px"} : {backgroundColor:"transparent"} }>

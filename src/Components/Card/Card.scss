@@ -2,30 +2,32 @@
     width: fit-content;
     height: fit-content;
     margin: 0 auto;
-    margin-bottom: 4rem;
-    @media (max-width:525px){
-        margin-bottom: 1rem; 
-        
-        }
+    margin-bottom: 1rem;
+
+    @media (min-width:525px){
+        margin-bottom: 4rem; 
+    }
+
     img{
         transition: all .3s ease .25s;
+        width: 105%!important;
+        right: 1.5rem;
+        position: relative; 
 
-        @media (max-width:650px){
+        @media (min-width:525px){
             width: 220px!important;
-            
-            }
+            right: 0%;
+            position: unset;
+        }
 
-            @media (max-width:525px){
-                width: 105%!important;
-                right: 1.5rem;
-                position: relative; 
-                
-                }
+            @media (min-width:650px){
+                width: 100%;
+            }
     }
     
     &:hover{
-        
         cursor: pointer;
+
         img{
             transition: all .3s ease .25s;
             opacity: 0.75;
@@ -33,41 +35,40 @@
     }
 
     .Product-info{
-        left: 1.3rem;
+        left: 0 !important;
         position: relative;
+        text-align: center;
 
-        @media (max-width:525px){
+        @media (min-width:525px){
             position: relative;
-            text-align: center;
-            left: 0 !important;
-            
-            }
+            text-align: unset;
+            left: 1.3rem;
+        }
         
 
-    h4{
-        color: #1b1e2f;
-        font-family: Montserrat,sans-serif;
-        font-size: .9em;
-        line-height: 1.4;
-        font-weight: 700;
-        margin-bottom: 0;
-        @media (max-width:525px){
+        h4{
+            color: #1b1e2f;
+            font-family: Montserrat,sans-serif;
             font-size: 18px; 
+            line-height: 1.4;
+            font-weight: 700;
+            margin-bottom: 0;
+
+            @media (min-width:525px){
+                font-size: .9em;
+            }
+        }
+
+        p{
+        font-family: Montserrat,sans-serif;
+        font-size: 0.95em;
+        line-height: 1.5;
+        color: #2e334f;
+        margin-top: 0.5rem;
+        @media (max-width:525px){
+            font-size: 16px!important; 
             
             }
-    }
-
-    p{
-    font-family: Montserrat,sans-serif;
-    font-size: 0.95em;
-    line-height: 1.5;
-    color: #2e334f;
-    margin-top: 0.5rem;
-    @media (max-width:525px){
-        font-size: 16px!important; 
-        
         }
     }
-}
-
 }
