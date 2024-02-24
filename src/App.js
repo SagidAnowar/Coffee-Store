@@ -11,6 +11,7 @@ import Espresso from "./Pages/Shop/Espresso/Espresso";
 import Decaf from "./Pages/Shop/Decaf/Decaf";
 import Cart from "./Components/Cart/Cart";
 import About from "./Pages/About/About";
+import LoginList from "./Pages/LoginList/LoginList";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           </Route>
 
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<LoginList />}></Route>
         </Routes>
       </MusicProvider>
     </div>
