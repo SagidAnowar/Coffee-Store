@@ -6,6 +6,11 @@ import ProductList from "./Pages/Product-List/Product-List";
 import ShopHomePage from "./Pages/Shop/ShopHomePage/ShopHomePage";
 import Product from "./Components/Product/Product";
 import DarkRoast from "./Pages/Shop/DarkRoast/DarkRoast";
+import LightRoast from "./Pages/Shop/LightRoast/LightRoast";
+import Espresso from "./Pages/Shop/Espresso/Espresso";
+import Decaf from "./Pages/Shop/Decaf/Decaf";
+import Cart from "./Components/Cart/Cart";
+import About from "./Pages/About/About";
 
 function App() {
   return (
@@ -18,7 +23,13 @@ function App() {
             <Route index element={<ShopHomePage />} />
             <Route path=":product" element={<Product />} />
             <Route path="Dark_Roast" element={<DarkRoast />} />
+            <Route path="Light_Roast" element={<LightRoast />} />
+            <Route path="Espresso" element={<Espresso />} />
+            <Route path="Decaf" element={<Decaf />} />
+            <Route path="Cart" element={<Cart />} />
           </Route>
+
+          <Route path="/about" element={<About />} />
         </Routes>
       </MusicProvider>
     </div>
