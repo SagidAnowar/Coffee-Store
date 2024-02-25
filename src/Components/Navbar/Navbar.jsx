@@ -5,6 +5,7 @@ import { ReactComponent as Logo } from "../../Assets/Morning Aroma.svg";
 import Toggle from 'react-toggle'
 import { Sling as Hamburger } from 'hamburger-react'
 import MusicContext from "../../Context/musicContext";
+import { useSelector } from 'react-redux';
 
 
 
@@ -13,6 +14,7 @@ const Navbar = () => {
     const {play, stop, checked, setChecked} = useContext(MusicContext);
     const [scroll, setScroll] = useState(false);
     const [isOpen, setOpen] = useState(false);
+    const user = useSelector(state=>state.user.currentUser);
     
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -38,22 +40,31 @@ const Navbar = () => {
                         <li>
                             <Link className={scroll ? "Navbar-Links" : "Navbar-Links-Scroll"} to="/about">ABOUT</Link>
                         </li>
-
-                        
+                        {/* <li>
+                            {user === null 
+                            ? null 
+                            : <Link className={scroll ? "Navbar-Links" : "Navbar-Links-Scroll"} onClick={handleLogout} to="/">LOG OUT</Link>}
+                        </li> */}
                         <li>
-                            <Link className={scroll ? "Navbar-Links" : "Navbar-Links-Scroll"} to="/login">SIGN IN</Link> 
+                            {user === null 
+                            ? <Link className={scroll ? "Navbar-Links" : "Navbar-Links-Scroll"} to="/login">SIGN IN</Link> 
+                            : <Link className={scroll ? "Navbar-Links" : "Navbar-Links-Scroll"} to="/account">ACCOUNT</Link>
+                            }
                         </li> 
 
                         <li>
                             <Hamburger  toggled={isOpen} toggle={setOpen} />
                         </li>
 
-                        <div className='hamburger-section' style={isOpen? {top:"0px"} : {top: "-295px"}}>
+                        <div className='hamburger-section' style={isOpen? {top:(user != null ? "30px" :"0px")}: {top: "-295px"}}>
                             <div className="hamburger-container" >
                                 <Link className="hamburger" to='/'> HOME </Link>
                                 <Link className="hamburger" to='/shop'> SHOP </Link>
                                 <Link className="hamburger" to='/about'> ABOUT </Link>
-                                <Link className="hamburger" to='/login'> SIGN IN </Link>
+                                {/* {user === null ? null : <Link   className="hamburger" onClick={handleLogout} to='/'> LOG OUT </Link>} */}
+                                {user === null 
+                                    ? <Link   className="hamburger" to='/login'> SIGN IN </Link>
+                                    : <Link   className="hamburger" to='/account'> ACCOUNT </Link> }
                             </div>
                         </div>   
                         

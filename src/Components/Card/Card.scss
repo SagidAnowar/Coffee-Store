@@ -60,14 +60,14 @@
         }
 
         p{
-        font-family: Montserrat,sans-serif;
-        font-size: 0.95em;
-        line-height: 1.5;
-        color: #2e334f;
-        margin-top: 0.5rem;
-        @media (max-width:525px){
+            font-family: Montserrat,sans-serif;
             font-size: 16px!important; 
+            line-height: 1.5;
+            color: #2e334f;
+            margin-top: 0.5rem;
             
+            @media (min-width:525px){
+                font-size: 0.95em;
             }
         }
     }

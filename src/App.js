@@ -12,6 +12,9 @@ import Decaf from "./Pages/Shop/Decaf/Decaf";
 import Cart from "./Components/Cart/Cart";
 import About from "./Pages/About/About";
 import LoginList from "./Pages/LoginList/LoginList";
+import SignIn from "./LoginElements/Sign-In/Sign-In";
+import Register from "./LoginElements/Register/Register";
+import Reset from "./LoginElements/Reset/Reset";
 
 function App() {
   return (
@@ -31,7 +34,11 @@ function App() {
           </Route>
 
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<LoginList />}></Route>
+          <Route path="/login" element={<LoginList />}>
+            <Route index element={<SignIn />} />
+            <Route path="register" element={<Register />} />
+            <Route path="password-reset" element={<Reset />} />
+          </Route>
         </Routes>
       </MusicProvider>
     </div>
