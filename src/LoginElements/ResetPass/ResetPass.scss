@@ -28,7 +28,7 @@
                 margin-bottom: 0;
                 font-family: Montserrat,sans-serif;
                 font-weight: 400;
-                font-style: normal;
+                font-style: normal; 
             }
         }
 
@@ -54,16 +54,17 @@
     }
 
     form{
-        margin-bottom: 15rem;
+        margin-bottom: 17rem;
         display: flex;
         justify-content: space-evenly;
         margin-top: 5rem;
-    }
-    
-    .box{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+
+        .div-reset-pass{
+            text-align: center;
+            @media (min-width:500px){
+                text-align: unset;
+            }
+        }
     }
 
     h1{
@@ -90,7 +91,7 @@
     }
 
     h3{
-        font-size: 16px;
+        font-size: 22px;
         line-height: 1.7;
         font-family: Montserrat,sans-serif;
         font-weight: 400;
@@ -99,8 +100,7 @@
         background: 0 0;
         color: #68a5c1;
         cursor:pointer;
-        display: flex;
-        justify-content: center;
+
         a{
             color: #68a5c1;
             text-decoration: none;

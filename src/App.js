@@ -15,6 +15,8 @@ import LoginList from "./Pages/LoginList/LoginList";
 import SignIn from "./LoginElements/Sign-In/Sign-In";
 import Register from "./LoginElements/Register/Register";
 import Reset from "./LoginElements/Reset/Reset";
+import ResetPass from "./LoginElements/ResetPass/ResetPass";
+import Account from "./Pages/Account/Account";
 
 function App() {
   return (
@@ -38,7 +40,10 @@ function App() {
             <Route index element={<SignIn />} />
             <Route path="register" element={<Register />} />
             <Route path="password-reset" element={<Reset />} />
+            <Route path="reset-pass/:token" element={<ResetPass />} />
           </Route>
+
+          <Route path="/account" element={<Account />} />
         </Routes>
       </MusicProvider>
     </div>

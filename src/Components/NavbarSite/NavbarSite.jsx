@@ -1,18 +1,34 @@
 import "./NavbarSite.scss";
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from "../../Assets/Morning Aroma.svg";
 import Toggle from 'react-toggle'
 import { Sling as Hamburger } from 'hamburger-react'
 import MusicContext from "../../Context/musicContext";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { ReactComponent as Cart} from "../../Assets/Cart.svg";
+import { ReactComponent as Logo} from "../../Assets/Morning Aroma.svg";
+import { Badge } from "@mui/material";
+import { logOut } from '../../Redux/userRedux';
+import axios from 'axios';
 
 const NavbarSite = () => {
 
     const {play, stop, checked, setChecked} = useContext(MusicContext);
     const [isOpen, setOpen] = useState(false);
-    const user = useSelector(state=>state.user.currentUser);
+    const user = useSelector(state => state.user.currentUser);
+    const quantity = useSelector(state => state.cart.quantity);
+    const dispatch = useDispatch();
+
+    const handleLogout = async () => {
+        try{
+            const order = await axios.get("https://morning-aroma.herokuapp.com/api/auth/logout");
+            dispatch(logOut());
+            console.log(order)
+        }
+        catch(err){
+            console.log(err);
+        }
+    };
 
     return (
         <nav className="HomePage-NavBar-Site">
@@ -32,11 +48,11 @@ const NavbarSite = () => {
                         <li>
                             <Link className="Navbar-Links-Site" to="/about">ABOUT</Link>
                         </li>
-                        {/* <li>
+                        <li>
                             {user === null 
                             ? null 
                             : <Link className="Navbar-Links-Site" onClick={handleLogout} to="/">LOG OUT</Link>}
-                        </li> */}
+                        </li>
                         <li>
                             {user === null 
                             ? <Link className="Navbar-Links-Site" to="/login">SIGN IN</Link> 
@@ -53,7 +69,9 @@ const NavbarSite = () => {
                                 <Link className="hamburger" to='/'> HOME </Link>
                                 <Link className="hamburger" to='/shop'> SHOP </Link>
                                 <Link className="hamburger" to='/about'> ABOUT </Link>
-                                {/* {user === null ? null : <Link   className="hamburger" onClick={handleLogout} to='/'> LOG OUT </Link>} */}
+                                {user === null 
+                                    ? null 
+                                    : <Link   className="hamburger" onClick={handleLogout} to='/'> LOG OUT </Link>}
                                 {user === null 
                                     ? <Link   className="hamburger" to='/login'> SIGN IN </Link>
                                     : <Link   className="hamburger" to='/account'> ACCOUNT </Link> }
@@ -69,6 +87,14 @@ const NavbarSite = () => {
                                 : () => {setChecked(!checked); play() }}
                             >
                             </Toggle>
+                        </li>
+
+                        <li>
+                            <Link to="/shop/Cart" >
+                                <Badge badgeContent={quantity} color="success">
+                                    <Cart className="Cart-Logo-Site"/>
+                                </Badge>
+                            </Link>
                         </li>
                     </ul>
                 </div>

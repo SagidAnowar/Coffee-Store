@@ -27,3 +27,13 @@ export const registerRequest = async (dispatch, user) => {
     dispatch(loginFailure());
   }
 };
+
+export const resetPassword = async (dispatch, user) => {
+  dispatch(resetStart());
+  try {
+    const res = await publicRequest.post("/auth/reset", { email: user.email });
+    dispatch(reset(JSON.parse(res.config.data)));
+  } catch (err) {
+    dispatch(resetError());
+  }
+};

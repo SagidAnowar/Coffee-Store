@@ -7,13 +7,17 @@ import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CoffeeData from "../../Data/products";
 import Card from "../Card/Card";
+import { addProduct } from "../../Redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Product = () => {
+    const dispatch = useDispatch();
     const location = useLocation();
     const [number, setNumber] = useState(1);
     const [grind, setGrind] = useState("Whole Bean");
     const state = location.state.coffee;
     let type = location.state.coffee.category;
+    
 
     let ImageCard;
 
@@ -42,6 +46,10 @@ const Product = () => {
     state["photo"] = imageColor;
     state["quantity"] = number;
     state["total"] = state.price*number;
+
+    const handleClick = () => {
+        dispatch(addProduct({ product:state, quantity:state.quantity }))
+    }
 
     return (
         <section className="Product-section">
@@ -75,7 +83,7 @@ const Product = () => {
 
                         <div className="button-divs">
                             <Link 
-                                // onClick={handleClick} 
+                                onClick={handleClick} 
                                 className="add-to-cart-button" 
                                 type="submit" 
                                 to="/shop/Cart" 
@@ -96,8 +104,8 @@ const Product = () => {
             <div className="Product-recommendation">
                 <h2 className="recommendation-tag">You may also like</h2>
                 <div className="CardList-recommended">
-                    {CoffeeData.coffees.slice(0,4).map((coffee,index) => (
-                    <Card key ={index} coffee={coffee}/>
+                    {CoffeeData.coffees.slice(0, 4).map((coffee, index) => (
+                        <Card key={index} coffee={coffee}/>
                     ))}
                 </div>
             </div>

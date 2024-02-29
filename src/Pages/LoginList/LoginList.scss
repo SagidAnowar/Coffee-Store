@@ -25,6 +25,16 @@
                 text-align: unset;
             }
 
+
+            @media (max-width:750px){
+                padding-left: 0;
+            }
+
+            @media (max-width:450px){
+                display: grid!important;
+                grid-template-columns: repeat(6, 1fr); ;
+            }
+
             .first-row-item{
                 @media (max-width:450px){
                     grid-column: span 2;
@@ -45,15 +55,6 @@
                 }
             }
 
-                @media (max-width:750px){
-                    padding-left: 0;
-                }
-
-                @media (max-width:450px){
-                    display: grid!important;
-                    grid-template-columns: repeat(6, 1fr); ;
-                }
-
 
             li{
                 cursor: pointer;
@@ -61,16 +62,18 @@
                 font-family: "Montserrat", sans-serif;
                 font-size: 14px;
                 transition: all 0.5s ease;
-                font-size: 12px!important;
-                
-                @media (min-width:360px){
+                font-weight: 500;
+    
+                @media (max-width:750px){
                     font-size: 13px!important;
-                }
-
-                    @media (min-width:750px){
-                        font-weight: 500;
+                    
                     }
-
+    
+                    @media (max-width:360px){
+                        font-size: 12px!important;
+                        
+                        }
+    
                 &:hover{
                     color:#68a5c1!important;
                     transition: all 0.5s ease;

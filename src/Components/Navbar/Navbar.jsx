@@ -2,11 +2,14 @@ import "./Navbar.scss";
 import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from "../../Assets/Morning Aroma.svg";
+import { ReactComponent as Cart} from "../../Assets/Cart.svg";
 import Toggle from 'react-toggle'
 import { Sling as Hamburger } from 'hamburger-react'
 import MusicContext from "../../Context/musicContext";
-import { useSelector } from 'react-redux';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { logOut } from "../../Redux/userRedux";
+import { Badge } from "@mui/material";
+import axios from "axios";
 
 
 const Navbar = () => {
@@ -14,13 +17,26 @@ const Navbar = () => {
     const {play, stop, checked, setChecked} = useContext(MusicContext);
     const [scroll, setScroll] = useState(false);
     const [isOpen, setOpen] = useState(false);
-    const user = useSelector(state=>state.user.currentUser);
+    const user = useSelector(state => state.user.currentUser);
+    const dispatch = useDispatch();
+    const quantity = useSelector(state => state.cart.quantity);
     
     useEffect(() => {
         window.addEventListener("scroll", () => {
           setScroll(window.scrollY > 60);
         });
       }, []);
+
+    const handleLogout = async () => {
+        try{
+            const order = await axios.get("https://morning-aroma.herokuapp.com/api/auth/logout");
+            dispatch(logOut());
+            console.log(order)
+        }
+        catch(err){
+            console.log(err)
+        }
+    };
 
     return (
         <nav className="HomePage-NavBar" style={ scroll ? {backgroundColor:"#282828", padding: "7px 30px"} : {backgroundColor:"transparent"} }>
@@ -40,11 +56,11 @@ const Navbar = () => {
                         <li>
                             <Link className={scroll ? "Navbar-Links" : "Navbar-Links-Scroll"} to="/about">ABOUT</Link>
                         </li>
-                        {/* <li>
+                        <li>
                             {user === null 
                             ? null 
                             : <Link className={scroll ? "Navbar-Links" : "Navbar-Links-Scroll"} onClick={handleLogout} to="/">LOG OUT</Link>}
-                        </li> */}
+                        </li>
                         <li>
                             {user === null 
                             ? <Link className={scroll ? "Navbar-Links" : "Navbar-Links-Scroll"} to="/login">SIGN IN</Link> 
@@ -61,7 +77,9 @@ const Navbar = () => {
                                 <Link className="hamburger" to='/'> HOME </Link>
                                 <Link className="hamburger" to='/shop'> SHOP </Link>
                                 <Link className="hamburger" to='/about'> ABOUT </Link>
-                                {/* {user === null ? null : <Link   className="hamburger" onClick={handleLogout} to='/'> LOG OUT </Link>} */}
+                                {user === null 
+                                    ? null 
+                                    : <Link   className="hamburger" onClick={handleLogout} to='/'> LOG OUT </Link>}
                                 {user === null 
                                     ? <Link   className="hamburger" to='/login'> SIGN IN </Link>
                                     : <Link   className="hamburger" to='/account'> ACCOUNT </Link> }
@@ -71,12 +89,21 @@ const Navbar = () => {
                         <li>
                             <Toggle 
                             defaultChecked={checked}
-                            checked={checked===true ? true : false}
-                            onChange={checked=== true ? ()=>{setChecked(!checked); stop()} : () => {setChecked(!checked); play() }}
+                            checked={checked ===true ? true : false}
+                            onChange={checked === true 
+                                ? ()=>{setChecked(!checked); stop()} 
+                                : () => {setChecked(!checked); play() }}
                             >
                             </Toggle>
                         </li>
-
+                        
+                        <li>
+                            <Link to="/shop/Cart" >
+                                <Badge badgeContent={quantity} color="success">
+                                    <Cart className="Cart-Logo"/>
+                                </Badge>
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
