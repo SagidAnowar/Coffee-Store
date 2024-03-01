@@ -17,6 +17,7 @@ import Register from "./LoginElements/Register/Register";
 import Reset from "./LoginElements/Reset/Reset";
 import ResetPass from "./LoginElements/ResetPass/ResetPass";
 import Account from "./Pages/Account/Account";
+import Pay from "./Components/Pay/Pay";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
       <MusicProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-
+          <Route path="/account" element={<Account />} />
           <Route path="shop" element={<ProductList />}>
             <Route index element={<ShopHomePage />} />
             <Route path=":product" element={<Product />} />
@@ -34,7 +35,6 @@ function App() {
             <Route path="Decaf" element={<Decaf />} />
             <Route path="Cart" element={<Cart />} />
           </Route>
-
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<LoginList />}>
             <Route index element={<SignIn />} />
@@ -42,8 +42,7 @@ function App() {
             <Route path="password-reset" element={<Reset />} />
             <Route path="reset-pass/:token" element={<ResetPass />} />
           </Route>
-
-          <Route path="/account" element={<Account />} />
+          <Route path="/pay" element={<Pay />} />
         </Routes>
       </MusicProvider>
     </div>

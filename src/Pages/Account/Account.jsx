@@ -10,14 +10,16 @@ var qs = require('qs');
 const Account = () => {
     const path = useLocation().pathname;
     const [orderHistory, setOrderHistory] = useState();
+    const [click, setClick] = useState();
     let user = useSelector(state => {
         if (state.user.currentUser === null){
             return "";}
         return state.user.currentUser
     })
     let products = useSelector(state => state.cart.products);
+
     console.log(user, "hello")
-    const [click, setClick] = useState();
+    
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -28,19 +30,20 @@ const Account = () => {
             try{
                 const orders = await axios.get("https://morning-aroma.herokuapp.com/api/auth/history", {
                     params:
-                    {username: user},
-                    paramsSerializer: params => {
-                        return qs.stringify(params)
-                    }
+                        {username: user},
+                        paramsSerializer: params => {
+                            return qs.stringify(params)
+                        }
                 })
                 setOrderHistory(orders);
+
             }catch (err) {
                 console.log(err)
             }
         };
-
         getOrders();
-    }, [user,products])
+
+    }, [user, products])
 
     return (
         <section>

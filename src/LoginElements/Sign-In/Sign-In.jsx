@@ -18,25 +18,24 @@ const SignIn = () => {
   }
 
   if ( user != null){
-    navigate("/account")
+    navigate("/account") 
   }
   
   return (
     <section className="create-section">
       <h1>Sign In</h1>
       
-      <form>
+      <form> 
         <div>
           {error 
           ? <div className="div-error">
                 <h2>Incorrect email or password</h2>
             </div>    
           : null }
-
           <input placeholder="Username" onChange={(e)=> setuserName(e.target.value)}></input>
           <input placeholder="Password" onChange={(e)=> setPassword(e.target.value)}></input>
           <button onClick={handleClick}>Sign In</button>
-        </div>
+        </div> 
 
         <div style={{position:"relative",top:"-6px"}}>
           <h3 style={{marginTop:"0"}}><Link to ="password-reset">Forgot your password ?</Link></h3>
