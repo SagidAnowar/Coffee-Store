@@ -1,4 +1,4 @@
-import "./Navbar.scss";
+import "./navbar.scss";
 import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from "../../Assets/Morning Aroma.svg";
