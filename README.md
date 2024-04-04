@@ -18,7 +18,7 @@ Connecting the back end with the front end. The relationship with them using the
 
 # Run Locally
 Clone the project
--git clone https://github.com/RusssianMusketeer/Morning-Aroma.git
+-git clone https://github.com/SagidAnowar/Coffee-Store.git
 
 Go to the project directory
 -cd my-app/
